@@ -53,3 +53,17 @@ texture = ExtResource("7_e8wml")
 position = Vector2(1080, 392)
 rotation = 0.261799
 texture = ExtResource("8_on4wd")
+
+[node name="Accent" type="ColorRect" parent="."]
+offset_left = 685.0
+offset_top = 146.0
+offset_right = 709.0
+offset_bottom = 157.0
+color = Color(0.545098, 0, 0, 1)
+
+[node name="Accent2" type="ColorRect" parent="."]
+offset_left = 749.0
+offset_top = 53.0
+offset_right = 773.0
+offset_bottom = 64.0
+color = Color(0.545098, 0, 0, 1)
