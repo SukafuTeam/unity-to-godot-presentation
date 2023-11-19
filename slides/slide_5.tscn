@@ -42,3 +42,10 @@ text = "Refazendo um projeto seu na Godot
   - Foco apenas em como \"como faço isso aqui\"
       - Mais fácil de aprender nodes específicos da engine
       - Onboarding mais intuitivo com a API nova"
+
+[node name="Accent" type="ColorRect" parent="."]
+offset_left = 347.0
+offset_top = 146.0
+offset_right = 371.0
+offset_bottom = 157.0
+color = Color(0.545098, 0, 0, 1)
