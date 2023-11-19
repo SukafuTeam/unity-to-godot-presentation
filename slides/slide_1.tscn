@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dugqhbut7v7tq"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_qyy0n"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_2rifi"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_anavy"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_aay08"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_qyy0n")
+
+[node name="Background" parent="." instance=ExtResource("2_2rifi")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_anavy")
+theme_override_font_sizes/font_size = 120
+text = "INTRO"
+
+[node name="Body" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1550.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_aay08")
+theme_override_font_sizes/font_size = 70
+text = "O que vamos cobrir hoje:
+
+  - Quem somos?
+  - Estrutura geral da Engine
+  - Componentização
+  - Linguagens suportadas
+  - Coisas que gostamos (rapid fire)
+  - Voce deve usar a Godot?"

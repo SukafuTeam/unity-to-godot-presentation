@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd1r5mwr7hgpt"]
+
+[ext_resource type="Texture2D" uid="uid://uo03gqmfun1p" path="res://images/platformer/sprites/forest/tile_chao2.png" id="1_ibjbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx0rk"]
+size = Vector2(128, 32)
+
+[node name="TileChao2" type="Sprite2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("1_ibjbx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_dx0rk")

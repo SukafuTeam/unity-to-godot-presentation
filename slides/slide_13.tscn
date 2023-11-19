@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://umoladvum48t"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_fwniq"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_46s3n"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_tgy7k"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_lhuw8"]
+[ext_resource type="Texture2D" uid="uid://j82hl7hq4a53" path="res://images/presentation/input/input0.png" id="5_0smo5"]
+[ext_resource type="Texture2D" uid="uid://cxtkx4scovs45" path="res://images/presentation/input/input2.png" id="6_advei"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_fwniq")
+
+[node name="Background" parent="." instance=ExtResource("2_46s3n")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tgy7k")
+theme_override_font_sizes/font_size = 120
+text = "INPUT HANDLING"
+
+[node name="Body" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_lhuw8")
+theme_override_font_sizes/font_size = 70
+
+[node name="Input0" type="Sprite2D" parent="."]
+position = Vector2(536, 424)
+scale = Vector2(0.87247, 0.87247)
+texture = ExtResource("5_0smo5")
+
+[node name="Input2" type="Sprite2D" parent="."]
+position = Vector2(1320, 840)
+texture = ExtResource("6_advei")

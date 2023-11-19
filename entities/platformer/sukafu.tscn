@@ -1,0 +1,126 @@
+[gd_scene load_steps=19 format=3 uid="uid://ccqtm8bdkybun"]
+
+[ext_resource type="Script" path="res://scripts/platformer/sukafu_controller.gd" id="1_00yjr"]
+[ext_resource type="Texture2D" uid="uid://50eexn0rj6ke" path="res://images/platformer/sprites/sukafu/spr_pl_iddleDir_0.png" id="2_g2qex"]
+[ext_resource type="Texture2D" uid="uid://gaw1taop7the" path="res://images/platformer/sprites/sukafu/spr_pl_fallDir_0.png" id="3_hl7ko"]
+[ext_resource type="Texture2D" uid="uid://dtfj4vw627lii" path="res://images/platformer/sprites/sukafu/spr_pl_walkDir_1.png" id="3_imhmn"]
+[ext_resource type="Texture2D" uid="uid://dcrc1pt6ch7g1" path="res://images/platformer/sprites/sukafu/spr_pl_dashDir_0.png" id="3_iy5vo"]
+[ext_resource type="Texture2D" uid="uid://dl6u7716h26tc" path="res://images/platformer/sprites/sukafu/spr_pl_jumpDir_0.png" id="4_o0uku"]
+[ext_resource type="Texture2D" uid="uid://cshwwdicdsc61" path="res://images/platformer/sprites/sukafu/pulo_duploDir_0.png" id="4_o5ey5"]
+[ext_resource type="Texture2D" uid="uid://n088n1ni2o3c" path="res://images/platformer/sprites/sukafu/spr_pl_walkDir_2.png" id="4_uf2ft"]
+[ext_resource type="Texture2D" uid="uid://y2xq0fr03l48" path="res://images/platformer/sprites/sukafu/pulo_duploDir_1.png" id="5_2bj3g"]
+[ext_resource type="Texture2D" uid="uid://dacn8n2icu3l" path="res://images/platformer/sprites/sukafu/spr_pl_walkDir_3.png" id="5_cixvc"]
+[ext_resource type="Texture2D" uid="uid://braqluqnsd42j" path="res://images/platformer/sprites/sukafu/spr_pl_walkDir_0.png" id="5_s4td4"]
+[ext_resource type="Texture2D" uid="uid://bsr3tj3w8yj1p" path="res://images/platformer/sprites/sukafu/pulo_duploDir_2.png" id="6_vhlxm"]
+[ext_resource type="Texture2D" uid="uid://dysm4wcm0la8p" path="res://images/platformer/sprites/sukafu/pulo_duploDir_3.png" id="7_avpux"]
+[ext_resource type="Texture2D" uid="uid://dep3alregki5u" path="res://images/platformer/sprites/sukafu/pulo_duploDir_4.png" id="8_kmxsn"]
+[ext_resource type="Texture2D" uid="uid://ds6swraqwkfs3" path="res://images/platformer/sprites/sukafu/pulo_duploDir_5.png" id="9_t6vrg"]
+[ext_resource type="Texture2D" uid="uid://b311mj8u8y2fi" path="res://images/platformer/sprites/sukafu/spr_pl_wallslideDir_0.png" id="16_imkvu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgjxg"]
+radius = 16.0
+height = 66.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m52me"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iy5vo")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o5ey5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2bj3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vhlxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_avpux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kmxsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t6vrg")
+}],
+"loop": true,
+"name": &"double_jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2qex")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hl7ko")
+}],
+"loop": true,
+"name": &"jump_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o0uku")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s4td4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_imhmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uf2ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cixvc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_imkvu")
+}],
+"loop": true,
+"name": &"wall_sliding",
+"speed": 5.0
+}]
+
+[node name="Sukafu" type="CharacterBody2D"]
+position = Vector2(70, 5)
+script = ExtResource("1_00yjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_bgjxg")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[node name="AnimationContainer" type="Node2D" parent="."]
+position = Vector2(0, 33)
+
+[node name="Animation" type="AnimatedSprite2D" parent="AnimationContainer"]
+position = Vector2(2.08165e-12, -33)
+sprite_frames = SubResource("SpriteFrames_m52me")
+animation = &"idle"

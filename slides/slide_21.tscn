@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvh7c42kq602q"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_egcl7"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_ur6x2"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_2dv0d"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_4tati"]
+[ext_resource type="Texture2D" uid="uid://bspp51f83cahw" path="res://images/presentation/global/global4.png" id="5_gm1ml"]
+[ext_resource type="Texture2D" uid="uid://xg7qmfyud1c0" path="res://images/presentation/global/global5.png" id="6_vxvs5"]
+[ext_resource type="Texture2D" uid="uid://csmfrp7hgffpe" path="res://images/presentation/global/global6.png" id="7_h0igq"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_egcl7")
+
+[node name="Background" parent="." instance=ExtResource("2_ur6x2")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2dv0d")
+theme_override_font_sizes/font_size = 120
+text = "GLOBAL SINGLETONS"
+
+[node name="Body" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_4tati")
+theme_override_font_sizes/font_size = 70
+
+[node name="Global5" type="Sprite2D" parent="."]
+position = Vector2(568, 584)
+scale = Vector2(1.64394, 1.64394)
+texture = ExtResource("6_vxvs5")
+
+[node name="Global4" type="Sprite2D" parent="."]
+position = Vector2(1328, 280)
+scale = Vector2(1.36111, 1.36111)
+texture = ExtResource("5_gm1ml")
+
+[node name="Global6" type="Sprite2D" parent="."]
+position = Vector2(1529.12, 904.687)
+scale = Vector2(1.24588, 1.24588)
+texture = ExtResource("7_h0igq")

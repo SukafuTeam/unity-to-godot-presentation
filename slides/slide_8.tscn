@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwnlso6tdncah"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_onplu"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_xh1s2"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_utula"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_ou6x5"]
+[ext_resource type="Texture2D" uid="uid://jpeg66q70pob" path="res://images/presentation/nodes/nodes5.png" id="5_p7rp8"]
+[ext_resource type="Texture2D" uid="uid://bi7md8s2flsgt" path="res://images/presentation/nodes/nodes6.png" id="6_u1hxb"]
+[ext_resource type="Texture2D" uid="uid://cu8ukv15llt1g" path="res://images/presentation/nodes/nodes7.png" id="7_ch60s"]
+[ext_resource type="Texture2D" uid="uid://b2toefghilj8y" path="res://images/presentation/nodes/nodes8.png" id="8_tswm3"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_onplu")
+
+[node name="Background" parent="." instance=ExtResource("2_xh1s2")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_utula")
+theme_override_font_sizes/font_size = 120
+text = "COMPONENTIZACAO"
+
+[node name="Body" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_ou6x5")
+theme_override_font_sizes/font_size = 58
+
+[node name="Nodes5" type="Sprite2D" parent="."]
+position = Vector2(760, 696)
+texture = ExtResource("5_p7rp8")
+
+[node name="Nodes6" type="Sprite2D" parent="."]
+position = Vector2(304, 336)
+texture = ExtResource("6_u1hxb")
+
+[node name="Nodes7" type="Sprite2D" parent="."]
+position = Vector2(1616, 400)
+texture = ExtResource("7_ch60s")
+
+[node name="Nodes8" type="Sprite2D" parent="."]
+position = Vector2(1600, 848)
+texture = ExtResource("8_tswm3")
+
+[node name="Line" type="Line2D" parent="."]
+points = PackedVector2Array(1376, 288, 624, 832)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Line2" type="Line2D" parent="."]
+points = PackedVector2Array(1360, 784, 896, 928)
+default_color = Color(0.545098, 0, 0, 1)

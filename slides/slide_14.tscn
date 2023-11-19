@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://tfhqryu16c00"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_d4ofh"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_77e83"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_ylr6d"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_km855"]
+[ext_resource type="Texture2D" uid="uid://c5ujb7kqbefex" path="res://images/presentation/input/input1.png" id="5_cubb5"]
+[ext_resource type="VideoStream" path="res://images/presentation/input/keyboard_input.ogv" id="6_t7wph"]
+[ext_resource type="Script" path="res://scripts/presentation/video_loop.gd" id="7_wuxfh"]
+[ext_resource type="VideoStream" path="res://images/presentation/input/gamepad_input.ogv" id="8_h0lnm"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_d4ofh")
+
+[node name="Background" parent="." instance=ExtResource("2_77e83")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ylr6d")
+theme_override_font_sizes/font_size = 120
+text = "INPUT HANDLING"
+
+[node name="Body" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_km855")
+theme_override_font_sizes/font_size = 70
+
+[node name="Input1" type="Sprite2D" parent="."]
+position = Vector2(432, 376)
+scale = Vector2(0.755415, 0.755415)
+texture = ExtResource("5_cubb5")
+
+[node name="keyboard" type="VideoStreamPlayer" parent="."]
+offset_left = 856.0
+offset_top = 208.0
+offset_right = 1944.0
+offset_bottom = 1296.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("6_t7wph")
+autoplay = true
+script = ExtResource("7_wuxfh")
+
+[node name="gamepad" type="VideoStreamPlayer" parent="."]
+offset_left = 1352.0
+offset_top = 520.0
+offset_right = 2440.0
+offset_bottom = 1608.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("8_h0lnm")
+autoplay = true
+script = ExtResource("7_wuxfh")

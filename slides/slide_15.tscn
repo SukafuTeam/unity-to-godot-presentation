@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bocxevcvuby26"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_d4ofh"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_77e83"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_ylr6d"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_km855"]
+[ext_resource type="Texture2D" uid="uid://bmmu80wpgf3x0" path="res://images/presentation/input/input3.png" id="5_dvh36"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_d4ofh")
+
+[node name="Background" parent="." instance=ExtResource("2_77e83")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ylr6d")
+theme_override_font_sizes/font_size = 120
+text = "INPUT HANDLING"
+
+[node name="Body" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_km855")
+theme_override_font_sizes/font_size = 70
+
+[node name="Input3" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.22709, 1.22709)
+texture = ExtResource("5_dvh36")

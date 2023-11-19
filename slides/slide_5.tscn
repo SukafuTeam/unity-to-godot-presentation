@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://q10n7andhpo0"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_m40lo"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_uinjc"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_8widy"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_ai2wd"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_m40lo")
+
+[node name="Background" parent="." instance=ExtResource("2_uinjc")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8widy")
+theme_override_font_sizes/font_size = 120
+text = "COMECANDO NA GODOT"
+
+[node name="Body" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_ai2wd")
+theme_override_font_sizes/font_size = 58
+text = "Refazendo um projeto seu na Godot
+
+  - Assets prontos
+      - Sprites
+      - UI
+      - Sfx
+      - Bgm
+  - Decisões de game design já tomadas
+      - Balance
+      - Controles
+      - Game Feel
+  - Foco apenas em como \"como faço isso aqui\"
+      - Mais fácil de aprender nodes específicos da engine
+      - Onboarding mais intuitivo com a API nova"

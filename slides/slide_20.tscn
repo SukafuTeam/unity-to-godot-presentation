@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv5mv1jweadrm"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_d3dni"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_1acor"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_lhfec"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_xiw4f"]
+[ext_resource type="Texture2D" uid="uid://u5tkx1q78fok" path="res://images/presentation/global/global0.png" id="5_7yrds"]
+[ext_resource type="Texture2D" uid="uid://7cfq261kk52o" path="res://images/presentation/global/global1.png" id="6_10jk3"]
+[ext_resource type="Texture2D" uid="uid://dw3ymr3kelpiq" path="res://images/presentation/global/global2.png" id="7_wamtr"]
+[ext_resource type="Texture2D" uid="uid://cax5fnlstu8g6" path="res://images/presentation/global/global3.png" id="8_fc3b4"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_d3dni")
+
+[node name="Background" parent="." instance=ExtResource("2_1acor")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lhfec")
+theme_override_font_sizes/font_size = 120
+text = "GLOBAL SINGLETONS"
+
+[node name="Body" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_xiw4f")
+theme_override_font_sizes/font_size = 70
+
+[node name="Global0" type="Sprite2D" parent="."]
+position = Vector2(304, 640)
+scale = Vector2(1.65441, 1.65441)
+texture = ExtResource("5_7yrds")
+
+[node name="Global1" type="Sprite2D" parent="."]
+position = Vector2(1192, 368)
+scale = Vector2(0.876963, 0.876963)
+texture = ExtResource("6_10jk3")
+
+[node name="Global2" type="Sprite2D" parent="."]
+position = Vector2(1616, 712)
+scale = Vector2(1.74265, 1.74265)
+texture = ExtResource("7_wamtr")
+
+[node name="Global3" type="Sprite2D" parent="."]
+position = Vector2(1532.65, 928.125)
+scale = Vector2(1.21, 1.21)
+texture = ExtResource("8_fc3b4")

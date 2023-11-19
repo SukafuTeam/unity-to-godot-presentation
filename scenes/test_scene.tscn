@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://di2frp74gd30j"]
+
+[ext_resource type="PackedScene" uid="uid://cgyjq7a7ynipa" path="res://entities/platformer/background_forest.tscn" id="1_8jqn8"]
+[ext_resource type="PackedScene" uid="uid://ccqtm8bdkybun" path="res://entities/platformer/sukafu.tscn" id="2_6ib8m"]
+[ext_resource type="PackedScene" uid="uid://oay1l4xts8mn" path="res://entities/platformer/tilesets/tile_chao.tscn" id="3_ha4fp"]
+[ext_resource type="PackedScene" uid="uid://bd1r5mwr7hgpt" path="res://entities/platformer/tilesets/tile_chao_2.tscn" id="4_1kjs4"]
+[ext_resource type="PackedScene" uid="uid://dhtjypfknsqdc" path="res://entities/platformer/tilesets/tile_chao_3.tscn" id="5_130wb"]
+[ext_resource type="PackedScene" uid="uid://cxc7g1ndjxw8e" path="res://entities/platformer/tilesets/tile_chao_4.tscn" id="6_224eq"]
+[ext_resource type="PackedScene" uid="uid://b2yww2imuxtf1" path="res://entities/platformer/button.tscn" id="7_3xq75"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d8qva"]
+scenes/1/scene = ExtResource("3_ha4fp")
+scenes/2/scene = ExtResource("4_1kjs4")
+scenes/3/scene = ExtResource("5_130wb")
+scenes/4/scene = ExtResource("6_224eq")
+
+[sub_resource type="TileSet" id="TileSet_q5h88"]
+tile_size = Vector2i(128, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetScenesCollectionSource_d8qva")
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_8jqn8")]
+
+[node name="Sukafu" parent="." node_paths=PackedStringArray("ground_tilemap") instance=ExtResource("2_6ib8m")]
+position = Vector2(232, 640)
+collision_mask = 3
+ground_tilemap = NodePath("../ground")
+
+[node name="ground" type="TileMap" parent="."]
+z_index = -1
+tile_set = SubResource("TileSet_q5h88")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 0, 65536, 1376257, 0, 65536, 1376258, 0, 65536, 1376259, 0, 65536, 1376260, 0, 65536, 1376261, 0, 65536, 1376262, 0, 65536, 1376263, 0, 65536, 1376264, 0, 65536, 1376265, 0, 65536, 1376266, 0, 65536, 1376267, 0, 65536, 1376268, 0, 65536, 1441792, 0, 131072, 1441793, 0, 131072, 1441794, 0, 131072, 1441795, 0, 131072, 1507332, 0, 131072, 1507333, 0, 131072, 1507334, 0, 131072, 1507335, 0, 131072, 1507336, 0, 131072, 1507337, 0, 131072, 1507338, 0, 131072, 1507339, 0, 131072, 1507340, 0, 131072, 1441804, 0, 131072, 1441803, 0, 131072, 1441802, 0, 131072, 1441801, 0, 131072, 1441800, 0, 131072, 1441799, 0, 131072, 1441798, 0, 131072, 1441797, 0, 131072, 1441796, 0, 131072, 1507331, 0, 131072, 1507330, 0, 131072, 1507329, 0, 131072, 1507328, 0, 131072, 1572863, 0, 131072, 1507327, 0, 131072, 1441791, 0, 131072, 1376255, 0, 131072, 1310719, 0, 131072, 1245183, 0, 131072, 1179647, 0, 131072, 1114111, 0, 131072, 1048575, 0, 131072, 983039, 0, 131072, 917503, 0, 131072, 851967, 0, 131072, 786431, 0, 131072, 720895, 0, 131072, 655359, 0, 131072, 589823, 0, 131072, 524287, 0, 131072, 458751, 0, 131072, 393215, 0, 131072, 327679, 0, 131072, 262143, 0, 131072, 196607, 0, 131072, 131071, 0, 131072, 65535, 0, 131072, 1507341, 0, 131072, 1441805, 0, 131072, 1376269, 0, 65536, 786438, 0, 196608, 917510, 0, 196608, 917512, 0, 262144, 786440, 0, 196608, -1, 0, 131072, -65536, 0, 131072, -65535, 0, 131072, -65534, 0, 131072, -65533, 0, 131072, -65532, 0, 131072, -65531, 0, 131072, -65530, 0, 131072, -65529, 0, 131072, -65528, 0, 131072, -65527, 0, 131072, -65526, 0, 131072, -65525, 0, 131072, -65524, 0, 131072, -65523, 0, 131072, -65522, 0, 65536, -65521, 0, 65536, -65520, 0, 65536, 16, 0, 65536, 65552, 0, 65536, 131088, 0, 65536, 196624, 0, 65536, 262160, 0, 65536, 327696, 0, 65536, 393232, 0, 65536, 458768, 0, 65536, 524304, 0, 65536, 589840, 0, 65536, 655376, 0, 65536, 720912, 0, 65536, 786448, 0, 65536, 851984, 0, 65536, 917520, 0, 65536, 983056, 0, 131072, 1376272, 0, 131072, 1441808, 0, 131072, 1507344, 0, 131072, 1507343, 0, 131072, 1507342, 0, 65536, 1441806, 0, 131072, 1441807, 0, 131072, 1376270, 0, 65536, 1376271, 0, 65536, 1310736, 0, 131072, 1245200, 0, 131072, 1179664, 0, 131072, 1114128, 0, 131072, 1048592, 0, 131072, 720902, 0, 65536, 720903, 0, 65536, 720904, 0, 65536, 720905, 0, 65536)
+
+[node name="Button" parent="." instance=ExtResource("7_3xq75")]
+position = Vector2(1024, 666)

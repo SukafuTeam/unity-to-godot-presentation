@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvd6aqsgwk4oh"]
+
+[ext_resource type="Texture2D" uid="uid://dbopvx5b68bep" path="res://images/platformer/sprites/forest/tile_fundo1.png" id="1_0ocoe"]
+
+[node name="TileFundo1" type="Sprite2D"]
+z_index = -1
+position = Vector2(32, 32)
+texture = ExtResource("1_0ocoe")

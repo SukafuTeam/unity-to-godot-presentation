@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=3 uid="uid://bg24mn16kduh3"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_yd8if"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_2mcex"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_kx1pi"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_4q68k"]
+[ext_resource type="Texture2D" uid="uid://b5abm5jt1lyrq" path="res://images/presentation/parallax/parallax0.png" id="5_2cd5p"]
+[ext_resource type="PackedScene" uid="uid://cgyjq7a7ynipa" path="res://entities/platformer/background_forest.tscn" id="6_1hgav"]
+[ext_resource type="PackedScene" uid="uid://oay1l4xts8mn" path="res://entities/platformer/tilesets/tile_chao.tscn" id="7_kt4bl"]
+[ext_resource type="PackedScene" uid="uid://bd1r5mwr7hgpt" path="res://entities/platformer/tilesets/tile_chao_2.tscn" id="8_fjbvi"]
+[ext_resource type="PackedScene" uid="uid://dhtjypfknsqdc" path="res://entities/platformer/tilesets/tile_chao_3.tscn" id="9_cl66a"]
+[ext_resource type="PackedScene" uid="uid://cxc7g1ndjxw8e" path="res://entities/platformer/tilesets/tile_chao_4.tscn" id="10_igmda"]
+[ext_resource type="Texture2D" uid="uid://50eexn0rj6ke" path="res://images/platformer/sprites/sukafu/spr_pl_iddleDir_0.png" id="12_2b6h1"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5d3d6"]
+scenes/1/scene = ExtResource("7_kt4bl")
+scenes/2/scene = ExtResource("8_fjbvi")
+scenes/3/scene = ExtResource("9_cl66a")
+scenes/4/scene = ExtResource("10_igmda")
+
+[sub_resource type="TileSet" id="TileSet_iwin7"]
+tile_size = Vector2i(128, 32)
+sources/1 = SubResource("TileSetScenesCollectionSource_5d3d6")
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_yd8if")
+
+[node name="Background" parent="." instance=ExtResource("2_2mcex")]
+visible = false
+z_index = -100
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kx1pi")
+theme_override_font_sizes/font_size = 120
+text = "PARALLAX"
+
+[node name="Body" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_4q68k")
+theme_override_font_sizes/font_size = 70
+
+[node name="Parallax0" type="Sprite2D" parent="."]
+position = Vector2(320, 448)
+texture = ExtResource("5_2cd5p")
+
+[node name="Background2" parent="." instance=ExtResource("6_1hgav")]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="Line" type="Line2D" parent="."]
+points = PackedVector2Array(760, 128, 547, 382)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Line2" type="Line2D" parent="."]
+points = PackedVector2Array(768, 400, 546, 432)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Line3" type="Line2D" parent="."]
+position = Vector2(-6, 3)
+points = PackedVector2Array(880, 624, 552, 480)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Line4" type="Line2D" parent="."]
+position = Vector2(-5, -3)
+points = PackedVector2Array(800, 848, 552, 536)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(1.5, 1.5)
+tile_set = SubResource("TileSet_iwin7")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 1, 65536, 1376257, 1, 65536, 1376258, 1, 65536, 1376259, 1, 65536, 1376260, 1, 65536, 1376261, 1, 65536, 1376262, 1, 65536, 1376263, 1, 65536, 1376264, 1, 65536, 1376265, 1, 65536, 1376266, 1, 65536, 1441792, 1, 131072, 1441793, 1, 131072, 1441794, 1, 131072, 1441795, 1, 131072, 1441796, 1, 131072, 1441797, 1, 131072, 1441798, 1, 131072, 1441799, 1, 131072, 1441800, 1, 131072, 1441801, 1, 131072, 1441802, 1, 131072)
+
+[node name="SprPlIddleDir0" type="Sprite2D" parent="."]
+position = Vector2(224, 960)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_2b6h1")

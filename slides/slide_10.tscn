@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://df4k5irkfd7tr"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_fwniq"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_46s3n"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_tgy7k"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_lhuw8"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_fwniq")
+
+[node name="Background" parent="." instance=ExtResource("2_46s3n")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tgy7k")
+theme_override_font_sizes/font_size = 120
+text = "GDSCRIPT"
+
+[node name="Body" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_lhuw8")
+theme_override_font_sizes/font_size = 70
+text = "- linguagem com uma sintaxe simples
+- similar a python
+    - era python
+- integração ótima com o editor
+    - o código vai ter highlight de coisa no inspector
+        (nome de nodes por exemplo)
+- debugger :chefs-kiss:
+- rápida compilação e execução de código durante 
+     desenvolvimento"

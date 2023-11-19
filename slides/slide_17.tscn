@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://djh7qhy16tcet"]
+
+[ext_resource type="PackedScene" uid="uid://cgyjq7a7ynipa" path="res://entities/platformer/background_forest.tscn" id="2_va5km"]
+[ext_resource type="PackedScene" uid="uid://ccqtm8bdkybun" path="res://entities/platformer/sukafu.tscn" id="3_4sk1j"]
+[ext_resource type="PackedScene" uid="uid://oay1l4xts8mn" path="res://entities/platformer/tilesets/tile_chao.tscn" id="4_a1f4g"]
+[ext_resource type="PackedScene" uid="uid://bd1r5mwr7hgpt" path="res://entities/platformer/tilesets/tile_chao_2.tscn" id="5_5ihig"]
+[ext_resource type="PackedScene" uid="uid://dhtjypfknsqdc" path="res://entities/platformer/tilesets/tile_chao_3.tscn" id="6_1umfs"]
+[ext_resource type="PackedScene" uid="uid://cxc7g1ndjxw8e" path="res://entities/platformer/tilesets/tile_chao_4.tscn" id="7_h4ykv"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="9_e5me4"]
+[ext_resource type="Texture2D" uid="uid://cnqx4aolcpvmk" path="res://images/presentation/parallax/parallax1.png" id="10_0crvs"]
+[ext_resource type="Texture2D" uid="uid://ccldvl560p1dc" path="res://images/presentation/parallax/parallax2.png" id="11_hgx4j"]
+[ext_resource type="PackedScene" uid="uid://cb0rovwav0ygx" path="res://entities/platformer/next_slide.tscn" id="12_1c2po"]
+[ext_resource type="Texture2D" uid="uid://dvhrd0e85h07s" path="res://images/presentation/parallax/parallax3.png" id="12_t2xsc"]
+[ext_resource type="Texture2D" uid="uid://cp8kfv5rdy56t" path="res://images/presentation/parallax/parallax4.png" id="13_ngv6v"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d8qva"]
+scenes/1/scene = ExtResource("4_a1f4g")
+scenes/2/scene = ExtResource("5_5ihig")
+scenes/3/scene = ExtResource("6_1umfs")
+scenes/4/scene = ExtResource("7_h4ykv")
+
+[sub_resource type="TileSet" id="TileSet_q5h88"]
+tile_size = Vector2i(128, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetScenesCollectionSource_d8qva")
+
+[node name="Slide17" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("2_va5km")]
+
+[node name="Sukafu" parent="." node_paths=PackedStringArray("ground_tilemap") instance=ExtResource("3_4sk1j")]
+position = Vector2(232, 640)
+collision_mask = 3
+ground_tilemap = NodePath("../ground")
+
+[node name="ground" type="TileMap" parent="."]
+z_index = -1
+tile_set = SubResource("TileSet_q5h88")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 0, 65536, 1376257, 0, 65536, 1376258, 0, 65536, 1376259, 0, 65536, 1376260, 0, 65536, 1376261, 0, 65536, 1376262, 0, 65536, 1376263, 0, 65536, 1376264, 0, 65536, 1376265, 0, 65536, 1376266, 0, 65536, 1376267, 0, 65536, 1376268, 0, 65536, 1441792, 0, 131072, 1441793, 0, 131072, 1441794, 0, 131072, 1441795, 0, 131072, 1507332, 0, 131072, 1507333, 0, 131072, 1507334, 0, 131072, 1507335, 0, 131072, 1507336, 0, 131072, 1507337, 0, 131072, 1507338, 0, 131072, 1507339, 0, 131072, 1507340, 0, 131072, 1441804, 0, 131072, 1441803, 0, 131072, 1441802, 0, 131072, 1441801, 0, 131072, 1441800, 0, 131072, 1441799, 0, 131072, 1441798, 0, 131072, 1441797, 0, 131072, 1441796, 0, 131072, 1507331, 0, 131072, 1507330, 0, 131072, 1507329, 0, 131072, 1507328, 0, 131072, 1572863, 0, 131072, 1507327, 0, 131072, 1441791, 0, 131072, 1376255, 0, 131072, 1310719, 0, 131072, 1245183, 0, 131072, 1179647, 0, 131072, 1114111, 0, 131072, 1048575, 0, 131072, 983039, 0, 131072, 917503, 0, 131072, 851967, 0, 131072, 786431, 0, 131072, 720895, 0, 131072, 655359, 0, 131072, 589823, 0, 131072, 524287, 0, 131072, 458751, 0, 131072, 393215, 0, 131072, 327679, 0, 131072, 262143, 0, 131072, 196607, 0, 131072, 131071, 0, 131072, 65535, 0, 131072, 1507341, 0, 131072, 1441805, 0, 131072, 1376269, 0, 65536, -1, 0, 131072, -65536, 0, 131072, -65535, 0, 131072, -65534, 0, 131072, -65533, 0, 131072, -65532, 0, 131072, -65531, 0, 131072, -65530, 0, 131072, -65529, 0, 131072, -65528, 0, 131072, -65527, 0, 131072, -65526, 0, 131072, -65525, 0, 131072, -65524, 0, 131072, -65523, 0, 131072, -65522, 0, 131072, -65521, 0, 131072, -65520, 0, 131072, 1376272, 0, 65536, 1441808, 0, 131072, 1507344, 0, 131072, 1507343, 0, 131072, 1507342, 0, 65536, 1441806, 0, 131072, 1441807, 0, 131072, 1376270, 0, 65536, 1376271, 0, 65536, 1376273, 0, 65536, 1376274, 0, 65536, 1376275, 0, 65536, 1376276, 0, 65536, 1441809, 0, 131072, 1441810, 0, 131072, 1441811, 0, 131072, 1441812, 0, 131072, 1507348, 0, 131072, 1507347, 0, 131072, 1507346, 0, 131072, 1507345, 0, 131072, 1310740, 0, 131072, 1245204, 0, 131072, 1179668, 0, 131072, 1114132, 0, 131072, 1048596, 0, 131072, 983060, 0, 131072, 917524, 0, 131072, 851988, 0, 131072, 786452, 0, 131072, 720916, 0, 131072, 655380, 0, 131072, 589844, 0, 131072, 524308, 0, 131072, 458772, 0, 131072, 393236, 0, 131072, 327700, 0, 131072, 262164, 0, 131072, 196628, 0, 131072, 131092, 0, 131072, 65556, 0, 131072, 20, 0, 131072, -65516, 0, 131072, -65519, 0, 131072, -65518, 0, 131072, -65517, 0, 131072)
+
+[node name="NextSlide" parent="." instance=ExtResource("12_1c2po")]
+position = Vector2(2558, 632)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 12.0
+offset_right = 1531.0
+offset_bottom = 135.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_e5me4")
+theme_override_font_sizes/font_size = 110
+text = "PARALLAX"
+
+[node name="Parallax1" type="Sprite2D" parent="."]
+position = Vector2(1136, 126)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_0crvs")
+
+[node name="Line" type="Line2D" parent="."]
+position = Vector2(-491, -21)
+points = PackedVector2Array(1502, 45, 1286, 79)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Parallax2" type="Sprite2D" parent="."]
+position = Vector2(180, 249)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_hgx4j")
+
+[node name="Line2" type="Line2D" parent="."]
+points = PackedVector2Array(440, 225, 296, 144)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Parallax3" type="Sprite2D" parent="."]
+position = Vector2(1079, 400)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_t2xsc")
+
+[node name="Line3" type="Line2D" parent="."]
+position = Vector2(-1, -6)
+points = PackedVector2Array(962, 305, 684, 396)
+default_color = Color(0.545098, 0, 0, 1)
+
+[node name="Parallax4" type="Sprite2D" parent="."]
+position = Vector2(211, 550)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_ngv6v")
+
+[node name="Line4" type="Line2D" parent="."]
+points = PackedVector2Array(572, 618, 325, 448)
+default_color = Color(0.545098, 0, 0, 1)

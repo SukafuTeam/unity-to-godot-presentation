@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=3 uid="uid://cqngo7wpyfqi4"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_18.gd" id="1_l5a3f"]
+[ext_resource type="PackedScene" uid="uid://cgyjq7a7ynipa" path="res://entities/platformer/background_forest.tscn" id="2_51c1q"]
+[ext_resource type="PackedScene" uid="uid://ccqtm8bdkybun" path="res://entities/platformer/sukafu.tscn" id="3_c153g"]
+[ext_resource type="PackedScene" uid="uid://oay1l4xts8mn" path="res://entities/platformer/tilesets/tile_chao.tscn" id="4_335o6"]
+[ext_resource type="PackedScene" uid="uid://bd1r5mwr7hgpt" path="res://entities/platformer/tilesets/tile_chao_2.tscn" id="5_tr7ie"]
+[ext_resource type="PackedScene" uid="uid://dhtjypfknsqdc" path="res://entities/platformer/tilesets/tile_chao_3.tscn" id="6_3w6op"]
+[ext_resource type="PackedScene" uid="uid://cxc7g1ndjxw8e" path="res://entities/platformer/tilesets/tile_chao_4.tscn" id="7_jgjfd"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="8_clrle"]
+[ext_resource type="PackedScene" uid="uid://b2yww2imuxtf1" path="res://entities/platformer/button.tscn" id="9_3ks0h"]
+[ext_resource type="Texture2D" uid="uid://dc8762byrji1o" path="res://images/presentation/gdscript/gdscript3.png" id="10_65fb7"]
+[ext_resource type="Texture2D" uid="uid://dt5ekvnaonpq2" path="res://images/presentation/signals/signals0.png" id="11_221x5"]
+[ext_resource type="Texture2D" uid="uid://bu8kx40iv74go" path="res://images/presentation/signals/signals1.png" id="12_3du7o"]
+[ext_resource type="Texture2D" uid="uid://bsgqbebb7ohpe" path="res://images/presentation/signals/signals2.png" id="13_74wov"]
+[ext_resource type="PackedScene" uid="uid://cb0rovwav0ygx" path="res://entities/platformer/next_slide.tscn" id="14_pxv4m"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d8qva"]
+scenes/1/scene = ExtResource("4_335o6")
+scenes/2/scene = ExtResource("5_tr7ie")
+scenes/3/scene = ExtResource("6_3w6op")
+scenes/4/scene = ExtResource("7_jgjfd")
+
+[sub_resource type="TileSet" id="TileSet_q5h88"]
+tile_size = Vector2i(128, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetScenesCollectionSource_d8qva")
+
+[node name="Slide18" type="Node2D"]
+script = ExtResource("1_l5a3f")
+
+[node name="Background" parent="." instance=ExtResource("2_51c1q")]
+
+[node name="Sukafu" parent="." node_paths=PackedStringArray("ground_tilemap") instance=ExtResource("3_c153g")]
+position = Vector2(24, 640)
+collision_mask = 3
+ground_tilemap = NodePath("../ground")
+
+[node name="Button" parent="." instance=ExtResource("9_3ks0h")]
+position = Vector2(1848, 666)
+
+[node name="Door" type="Node2D" parent="."]
+position = Vector2(2048, 512)
+
+[node name="TileChao3" parent="Door" instance=ExtResource("6_3w6op")]
+position = Vector2(128, 32)
+
+[node name="TileChao4" parent="Door" instance=ExtResource("6_3w6op")]
+position = Vector2(128, 96)
+
+[node name="TileChao5" parent="Door" instance=ExtResource("7_jgjfd")]
+position = Vector2(128, 128)
+
+[node name="ground" type="TileMap" parent="."]
+z_index = -1
+tile_set = SubResource("TileSet_q5h88")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 0, 65536, 1376257, 0, 65536, 1376258, 0, 65536, 1376259, 0, 65536, 1376260, 0, 65536, 1376261, 0, 65536, 1376262, 0, 65536, 1376263, 0, 65536, 1376264, 0, 65536, 1376265, 0, 65536, 1376266, 0, 65536, 1376267, 0, 65536, 1376268, 0, 65536, 1441792, 0, 131072, 1441793, 0, 131072, 1441794, 0, 131072, 1441795, 0, 131072, 1507332, 0, 131072, 1507333, 0, 131072, 1507334, 0, 131072, 1507335, 0, 131072, 1507336, 0, 131072, 1507337, 0, 131072, 1507338, 0, 131072, 1507339, 0, 131072, 1507340, 0, 131072, 1441804, 0, 131072, 1441803, 0, 131072, 1441802, 0, 131072, 1441801, 0, 131072, 1441800, 0, 131072, 1441799, 0, 131072, 1441798, 0, 131072, 1441797, 0, 131072, 1441796, 0, 131072, 1507331, 0, 131072, 1507330, 0, 131072, 1507329, 0, 131072, 1507328, 0, 131072, 1572863, 0, 131072, 1507327, 0, 131072, 1441791, 0, 131072, 1376255, 0, 131072, 1310719, 0, 131072, 1245183, 0, 131072, 1179647, 0, 131072, 1114111, 0, 131072, 1048575, 0, 131072, 983039, 0, 131072, 917503, 0, 131072, 851967, 0, 131072, 786431, 0, 131072, 720895, 0, 131072, 655359, 0, 131072, 589823, 0, 131072, 524287, 0, 131072, 458751, 0, 131072, 393215, 0, 131072, 327679, 0, 131072, 262143, 0, 131072, 196607, 0, 131072, 131071, 0, 131072, 65535, 0, 131072, 1507341, 0, 131072, 1441805, 0, 131072, 1376269, 0, 65536, -1, 0, 131072, -65536, 0, 131072, -65535, 0, 131072, -65534, 0, 131072, -65533, 0, 131072, -65532, 0, 131072, -65531, 0, 131072, -65530, 0, 131072, -65529, 0, 131072, -65528, 0, 131072, -65527, 0, 131072, -65526, 0, 131072, -65525, 0, 131072, -65524, 0, 131072, -65523, 0, 131072, -65522, 0, 131072, -65521, 0, 131072, -65520, 0, 131072, 1376272, 0, 65536, 1441808, 0, 131072, 1507344, 0, 131072, 1507343, 0, 131072, 1507342, 0, 65536, 1441806, 0, 131072, 1441807, 0, 131072, 1376270, 0, 65536, 1376271, 0, 65536, 1376273, 0, 65536, 1376274, 0, 65536, 1376275, 0, 65536, 1376276, 0, 65536, 1441809, 0, 131072, 1441810, 0, 131072, 1441811, 0, 131072, 1441812, 0, 131072, 1507348, 0, 131072, 1507347, 0, 131072, 1507346, 0, 131072, 1507345, 0, 131072, 1310740, 0, 131072, 1245204, 0, 131072, 1179668, 0, 131072, 1114132, 0, 131072, 1048596, 0, 131072, 983060, 0, 131072, 917524, 0, 131072, 851988, 0, 131072, 786452, 0, 131072, 720916, 0, 131072, 655380, 0, 131072, 589844, 0, 131072, 524308, 0, 131072, 458772, 0, 131072, 393236, 0, 131072, 327700, 0, 131072, 262164, 0, 131072, 196628, 0, 131072, 131092, 0, 131072, 65556, 0, 131072, 20, 0, 131072, -65516, 0, 131072, -65519, 0, 131072, -65518, 0, 131072, -65517, 0, 131072, 917522, 0, 196608, 917520, 0, 196608)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 12.0
+offset_right = 1531.0
+offset_bottom = 135.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_clrle")
+theme_override_font_sizes/font_size = 110
+text = "SIGNALS"
+
+[node name="Gdscript3" type="Sprite2D" parent="."]
+position = Vector2(775.944, 411)
+scale = Vector2(0.605556, 0.605556)
+texture = ExtResource("10_65fb7")
+
+[node name="Signals0" type="Sprite2D" parent="."]
+position = Vector2(442.031, 190)
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("11_221x5")
+
+[node name="Signals1" type="Sprite2D" parent="."]
+position = Vector2(2192, 288)
+scale = Vector2(0.76087, 0.76087)
+texture = ExtResource("12_3du7o")
+
+[node name="Signals2" type="Sprite2D" parent="."]
+position = Vector2(1600, 208)
+scale = Vector2(0.648148, 0.648148)
+texture = ExtResource("13_74wov")
+
+[node name="NextSlide" parent="." instance=ExtResource("14_pxv4m")]
+position = Vector2(2560, 632)

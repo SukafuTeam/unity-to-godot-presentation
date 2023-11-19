@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://xo2003gc0b0f"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_ibya4"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_iy6oo"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_52o1g"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_2gwl5"]
+[ext_resource type="Texture2D" uid="uid://1d1d48fcwp8q" path="res://images/presentation/gdscript/gdscript1.png" id="5_t8i72"]
+[ext_resource type="Texture2D" uid="uid://dv8ncdm3yiobq" path="res://images/presentation/gdscript/gdscript2.png" id="6_7uau8"]
+[ext_resource type="Texture2D" uid="uid://dc8762byrji1o" path="res://images/presentation/gdscript/gdscript3.png" id="7_fnlbi"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_ibya4")
+
+[node name="Background" parent="." instance=ExtResource("2_iy6oo")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_52o1g")
+theme_override_font_sizes/font_size = 120
+text = "GDSCRIPT"
+
+[node name="Body" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_2gwl5")
+theme_override_font_sizes/font_size = 70
+
+[node name="Gdscript1" type="Sprite2D" parent="."]
+position = Vector2(416, 368)
+texture = ExtResource("5_t8i72")
+
+[node name="Gdscript2" type="Sprite2D" parent="."]
+position = Vector2(800, 832)
+texture = ExtResource("6_7uau8")
+
+[node name="Gdscript3" type="Sprite2D" parent="."]
+position = Vector2(1368, 368)
+texture = ExtResource("7_fnlbi")

@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://ban7bepa2msf3"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_wf5og"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_1w5qv"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_8hkev"]
+[ext_resource type="Texture2D" uid="uid://ki7sli27q7rf" path="res://images/presentation/title/unity.png" id="4_y7po3"]
+[ext_resource type="Texture2D" uid="uid://k0ov50a58ds6" path="res://images/presentation/title/godot.png" id="5_epvrf"]
+[ext_resource type="Texture2D" uid="uid://dsq37xvsw2s5" path="res://images/presentation/title/arrow.png" id="6_y6dj7"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_wf5og")
+
+[node name="Background" parent="." instance=ExtResource("2_1w5qv")]
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = 87.0
+offset_right = 770.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8hkev")
+theme_override_font_sizes/font_size = 120
+text = "MIGRANDO DA"
+
+[node name="Title2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = 197.0
+offset_right = 1028.0
+offset_bottom = 1033.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8hkev")
+theme_override_font_sizes/font_size = 220
+text = "UNITY
+PARA
+GODOT"
+
+[node name="Unity" type="Sprite2D" parent="."]
+position = Vector2(1052, 834)
+scale = Vector2(0.678433, 0.679516)
+texture = ExtResource("4_y7po3")
+
+[node name="Godot" type="Sprite2D" parent="."]
+position = Vector2(1531, 269)
+scale = Vector2(0.227857, 0.227857)
+texture = ExtResource("5_epvrf")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(1345, 606)
+rotation = -1.10978
+scale = Vector2(0.190287, 0.190287)
+texture = ExtResource("6_y6dj7")
+flip_v = true

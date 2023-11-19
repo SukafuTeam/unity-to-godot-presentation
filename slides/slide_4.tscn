@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bht2meaef2ei5"]
+
+[ext_resource type="Script" path="res://scripts/presentation/slide_controller.gd" id="1_bq0s3"]
+[ext_resource type="PackedScene" uid="uid://8gtawy8e6mw3" path="res://entities/presentation/background.tscn" id="2_idk24"]
+[ext_resource type="FontFile" uid="uid://ds75s7jxtajce" path="res://fonts/CFSamuraiBob-Regular.ttf" id="3_tyay0"]
+[ext_resource type="FontFile" uid="uid://bsnrkwhtr554m" path="res://fonts/Helvetica Neue 67 Medium Condensed.otf" id="4_84mot"]
+[ext_resource type="Texture2D" uid="uid://du7okg6356rct" path="res://images/presentation/caca_minhoca.png" id="5_hpkmc"]
+
+[node name="SlideTemplate" type="Node2D"]
+script = ExtResource("1_bq0s3")
+
+[node name="Background" parent="." instance=ExtResource("2_idk24")]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1550.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tyay0")
+theme_override_font_sizes/font_size = 120
+text = "COMECANDO NA GODOT"
+
+[node name="Body" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 1586.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("4_84mot")
+theme_override_font_sizes/font_size = 70
+text = "Sugestão de primeiro projeto:"
+
+[node name="CacaMinhoca" type="Sprite2D" parent="."]
+position = Vector2(864, 688)
+scale = Vector2(0.879147, 0.879147)
+texture = ExtResource("5_hpkmc")
